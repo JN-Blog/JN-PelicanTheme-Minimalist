@@ -36,8 +36,16 @@
     {% endif %}
 
     <!-- CSS File -->
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css"> -->
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css">
 
     <meta name="generator" content="Pelican" />
 </head>
+<body>
+    <header class="header">
+        <h1 class="header__title">{{ SITENAME }}</h1>
+    </header>
+    
+</body>
 </html>
