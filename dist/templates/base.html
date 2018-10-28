@@ -37,22 +37,45 @@
 
     <!-- CSS File -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css"> -->
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"> -->
 
     <meta name="generator" content="Pelican" />
 </head>
 <body>
     <header class="header">
-        <h1 class="header__title">{{ SITENAME }}</h1>
+        <!-- <div class="header__logo-box">
+
+        </div> -->
+        <div class="header__title-box">
+            <h1 class="header__title-box--text">{{ SITENAME }}</h1>
+        </div>
         <nav class="header__nav">
-            <ul>
-                {% for category, articles in categories %}
-                    <li class="header__categories"><a href="#" class="header__categories--link">{{ category }}</a></li>
-                {% endfor %}
-            </ul>
+            {% if DISPLAY_PAGES_ON_MENU %}
+                <p class="header__nav--search-title">Categories</p>
+                <ul class="header__nav--menu">
+                    {% for category, articles in categories %}
+                        <li class="header__categories"><a href="{{ SITEURL }}/{{ category.url }}" class="header__categories--link">{{ category }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if DISPLAY_TAGS_ON_MENU %}
+                <p class="header__nav--search-title">Tags</p>
+                <ul class="header__nav--menu">
+                    {% for tag, articles in tags %}
+                        <li class="header__tags"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tags--link">{{ tag }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </nav>
+        <div class="header__social-box">
+        </div>
     </header>
-    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>

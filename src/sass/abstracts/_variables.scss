@@ -1,5 +1,5 @@
 // COLORS
-$color-primary: #1ab188;
+$color-primary: #6B38FB;
 $color-primary-light: lighten($color-primary, 5%);
 $color-primary-dark: darken($color-primary, 5%); 
 
@@ -7,6 +7,9 @@ $color-gray-light: #a0b3b0;
 $color-gray: #ddd;
 
 $color-white: #fff;
+
+$color-font-dark: #000000;
+$color-font-grey: lighten($color-font-dark, 20%);
 
 // FONT
 $font-stack: "Lato", sans-serif;
