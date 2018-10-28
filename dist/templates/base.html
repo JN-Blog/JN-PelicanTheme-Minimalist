@@ -45,6 +45,13 @@
 <body>
     <header class="header">
         <h1 class="header__title">{{ SITENAME }}</h1>
+        <nav class="header__nav">
+            <ul>
+                {% for category, articles in categories %}
+                    <li class="header__categories"><a href="#" class="header__categories--link">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
     </header>
     
 </body>
