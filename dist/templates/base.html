@@ -43,39 +43,110 @@
     <meta name="generator" content="Pelican" />
 </head>
 <body>
-    <header class="header">
-        <!-- <div class="header__logo-box">
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
 
-        </div> -->
-        <div class="header__title-box">
-            <h1 class="header__title-box--text">{{ SITENAME }}</h1>
-        </div>
-        <nav class="header__nav">
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
             {% if DISPLAY_PAGES_ON_MENU %}
-                <p class="header__nav--search-title">Categories</p>
-                <ul class="header__nav--menu">
+                <p class="navigation__subtitle">Categories</p>
+                <ul class="navigation__list">
                     {% for category, articles in categories %}
-                        <li class="header__categories"><a href="{{ SITEURL }}/{{ category.url }}" class="header__categories--link">{{ category }}</a></li>
+                        <li class="navigation__item"><a href="{{ SITEURL }}/{{ category.url }}" class="navigation__link">{{ category }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}
             {% if DISPLAY_TAGS_ON_MENU %}
-                <p class="header__nav--search-title">Tags</p>
-                <ul class="header__nav--menu">
+                <p class="navigation__subtitle">Tags</p>
+                <ul class="navigation__list">
                     {% for tag, articles in tags %}
-                        <li class="header__tags"><a href="{{ SITEURL }}/{{ tag.url }}" class="header__tags--link">{{ tag }}</a></li>
+                        <li class="navigation__item"><a href="{{ SITEURL }}/{{ tag.url }}" class="navigation__link">{{ tag }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}
         </nav>
-        <div class="header__social-box">
+    </div>
+    <header class="header">
+        <div class="header__title-box">
+            <h1 class="heading-title">{{ SITENAME }}</h1>
         </div>
     </header>
+
     <main>
         {% block content %}{% endblock %}
     </main>
     <footer>
 
     </footer>
+<!-- <section class="grid-test">
+            <div class="row">
+                <div class="col-1-of-2">
+                    Col 1 of 2
+                </div>
+                <div class="col-1-of-2">
+                    Col 1 of 2
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    Col 1 of 3
+                </div>
+                <div class="col-1-of-3">
+                    Col 1 of 3
+                </div>
+                <div class="col-1-of-3">
+                    Col 1 of 3
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    Col 1 of 3
+                </div>
+                <div class="col-2-of-3">
+                    Col 2 of 3
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-2-of-4">
+                    Col 2 of 4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    Col 1 of 4
+                </div>
+                <div class="col-3-of-4">
+                    Col 3 of 4
+                </div>
+            </div>
+        </section> -->
 </body>
 </html>
