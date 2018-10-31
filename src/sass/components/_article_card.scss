@@ -1,0 +1,36 @@
+.article-card {
+    margin: 0 auto;
+    width: 60%;
+    // border: 1px solid $color-grey;
+    padding: 1rem 2rem;
+    
+    &__header {
+        margin-bottom: 2rem;
+    }
+
+    &__body {
+        margin-bottom: 2rem;
+
+        &--summary {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+    }
+
+    &__footer {
+
+        &--date {
+            display: inline-block;    
+        }
+
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: currentColor;
+        }
+    }
+}

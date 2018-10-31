@@ -71,15 +71,52 @@
     </div>
     <header class="header">
         <div class="header__title-box">
-            <h1 class="heading-title">{{ SITENAME }}</h1>
+            <h1 class="heading-brand heading-brand--primary"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></h1>
         </div>
     </header>
 
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="row">
+            <div class="footer__brand">
+                <p class="heading-brand heading-brand--white"><a href="{{ SITEURL }}" class="heading-brand__link">{{ SITENAME }}</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer__social">
+                <ul class="footer__list">
+                    {% for name, link in SOCIAL %}
+                        {% if name in ["linkedin"]%}
+                        <li class="footer__item"><a href="{{ link }}" class="footer__link" target="_blank"><ion-icon name="logo-linkedin" size="large"></ion-icon></a></li>
+                        {% endif %}
+                        {% if name.lower() in ["github"] %}
+                        <li class="footer__item"><a href="{{ link }}" class="footer__link" target="_blank"><ion-icon name="logo-github" size="large"></ion-icon></a></li>
+                        {% endif %}
+                        {% if name.lower() in ["twitter"] %}
+                        <li class="footer__item"><a href="{{ link }}" class="footer__link" target="_blank"><ion-icon name="logo-twitter" size="large"></ion-icon></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer__navigation">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="" class="footer__link">A propos</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Contact</a></li>
+                    <li class="footer__item"><a href="" class="footer__link">Politique de confidentialité</a></li>
+                </ul>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="footer__copyright">
+                <p class="heading-terms">Ce blog a été construit par {{ AUTHOR }}. Tous droits réservés.</p>
+                <p class="heading-terms">Ce blog utilise le générateur de site statique <a href="https://getpelican.com/" class="external-link" target="_blank">Pelican</a> construit en <a href="https://python.org" class="external-link" target="_blank">Python.</a></p>
+                <p class="heading-terms">Thème et design du blog créé par Julien Nuellas. Vous êtes autorisé à utiliser et modifier le thème pour votre propre usage. Une mention à l'auteur original est fortement apprécié.</p>
+            </div>
+        </div>
     </footer>
 <!-- <section class="grid-test">
             <div class="row">
@@ -148,5 +185,6 @@
                 </div>
             </div>
         </section> -->
+        <script src="https://unpkg.com/ionicons@4.4.6/dist/ionicons.js"></script>
 </body>
 </html>

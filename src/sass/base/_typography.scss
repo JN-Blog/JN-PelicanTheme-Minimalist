@@ -1,6 +1,60 @@
+body {
+    font-family: $font-stack;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $color-font-dark;
+}
+
+.heading-brand {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: currentColor;
+        }
+    }
+
+    &--primary {
+        color: $color-primary;
+    }
+
+    &--white {
+        color: $color-white;
+    }
+}
+
 .heading-title {
     color: $color-primary;
     font-size: 2rem;
     text-transform: uppercase;
+}
+
+.heading-sub {
+    color: $color-font-grey;
+    font-size: 1.4rem;
+    text-transform: uppercase;   
+}
+
+.heading-tertiary {
+    color: $color-font-grey;
+    font-size: 1.6rem;
+}
+
+.heading-terms {
+    font-size: 1.4rem;
+    color: $color-white;
     text-align: center;
+}
+
+.external-link {
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: $color-primary;
+    }
 }

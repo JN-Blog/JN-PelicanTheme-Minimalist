@@ -1,3 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+
+<section class="section-articles">
+    {% for article in articles_page.object_list %}
+        <div class="row">
+            <article class="article-card">
+                <div class="article-card__header">
+                    <div class="article-card__header--category">
+                        <p class="heading-sub">{{ article.category }}</p>
+                    </div>
+                    <div class="article-card__header--title">
+                        <h2 class="heading-title"><a href="{{ SITEURL }}/{{ article.url }}" class="article-card__link" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+                    </div>
+                </div>
+                <div class="article-card__body">
+                    <div class="article-card__body--summary">
+                        {{ article.summary }}
+                    </div>
+                </div>
+                <div class="article-card__footer">
+                    <div class="article-card__footer--date">
+                        <p class="heading-tertiary">{{ article.locale_date }}</p>
+                    </div> 
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn__article" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Lire &rarr;</a>
+                </div>
+            </article>
+        </div>
+    {% endfor %}
+</section>
+
 {% endblock %}
