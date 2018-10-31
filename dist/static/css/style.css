@@ -236,5 +236,39 @@ body {
     font-size: 1.6rem;
     font-weight: 700; }
 
+.article {
+  margin-top: 6rem; }
+  .article__content h1 {
+    color: #6B38FB;
+    font-size: 3rem;
+    margin: 3rem 1rem; }
+  .article__content h2 {
+    color: #6B38FB;
+    font-size: 2rem;
+    margin: 2rem 1rem; }
+  .article__content h3 {
+    color: #000000;
+    font-size: 1.6rem;
+    margin: 1.6rem 1rem; }
+  .article__content p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 1rem 1rem; }
+  .article__content img {
+    display: block;
+    width: 100%;
+    max-width: 60rem;
+    margin: 4rem auto; }
+  .article__content a {
+    text-decoration: none;
+    color: #6B38FB; }
+  .article__content .highlight {
+    font-size: 1.6rem;
+    margin: 1rem 2rem;
+    padding: 1rem 2rem;
+    background-color: rgba(221, 221, 221, 0.8);
+    border-radius: 5px; }
+
 .section-articles {
   margin-top: 6rem; }
